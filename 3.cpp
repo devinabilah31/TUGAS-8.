@@ -1,49 +1,31 @@
 #include<iostream>
 using namespace std;
 
-int* getFibo(int x){
-	int* fibo=new int[x];
-	
-	int jumlah;
-	for(int i=0; i<x; i++){
-		if(i==0 || i==1)
-			jumlah=1;
-		else
-			jumlah=fibo[i-2] + fibo[i-1];
-			
-		fibo[i]=jumlah;
+int printfibonaci(int n){
+	int awal = 1, akhir = 1, fibbo, sum = 0;
+
+	for(int i=0; i<n; i++){
+		if(i==0||i==1)
+			fibbo = 1;
+		else {
+			fibbo = awal + akhir;
+			awal = akhir;
+			akhir = fibbo;
 		}
-		return fibo;
+		sum += fibbo;
+		cout<<fibbo<<endl;
 	}
-		
-float getRerata(int x){
-	int sum=0;
-	int* fibo= getFibo(x);
-	
-	for(int i=0;i<x;i++){
-		sum+=fibo[i];
-	}
-	delete[] fibo;
-	
-	return sum/x;
+	return sum;
 }
-main()
-{
-	int x;
-	
-	cout<<"Enter how many fibonacci numbers you want: ";
-	cin>>x;
-	
+float getavarage(int sum, int n){
+	return sum/n;
+}
+main(){
+	int n;
+	cout<<"masukkan n;";
+	cin>>n;
 	cout<<endl;
 	
-	int* fibo= getFibo(x);
-	
-	for(int i=0;i<x; i++){
-		cout<<fibo[i]<<endl;
-	}
-	
-	cout<<endl<<"Their average is: "<<getRerata(x);
-	
-	delete[] fibo;
-
+	int sum = printfibonaci(n);
+	cout<<endl<<"rata ratanya:"<<getavarage(sum, n);
 }
