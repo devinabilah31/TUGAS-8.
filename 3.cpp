@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int printfibonaci(int n){
+int getfibbo(int n){
 	int awal = 1, akhir = 1, fibbo, sum = 0;
 
 	for(int i=0; i<n; i++){
@@ -26,6 +26,6 @@ main(){
 	cin>>n;
 	cout<<endl;
 	
-	int sum = printfibonaci(n);
+	int sum = getfibbo(n);
 	cout<<endl<<"rata ratanya:"<<getavarage(sum, n);
 }
