@@ -20,6 +20,6 @@ main(){
 			terkecil = angka[i];
 		}
 	}
-	cout<<"hasil terbesar x terkecil = "<<terbesar*terkecil<<endl;
+	cout<<"hasil terbesar * terkecil = "<<terbesar*terkecil<<endl;
 	return 0;
 }
